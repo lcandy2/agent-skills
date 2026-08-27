@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (in case a skill ever ships scripts)
+node_modules/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Env / secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Claude Code local state
+.claude/settings.local.json
