@@ -18,8 +18,8 @@ npx skills add lcandy2/agent-skills
 
 | Skill | Keywords |
 | --- | --- |
-| [general-writing-style](general-writing-style/SKILL.md) | writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting, AI writing signs |
-| [hidden-assumption-audit](hidden-assumption-audit/SKILL.md) | code review, hidden assumptions, hardcoded values, silent fallbacks, defensive code, over-engineering, AI-written code, ASSUMPTIONS.md |
+| [general-writing-style](general-writing-style/) | writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting, AI writing signs |
+| [hidden-assumption-audit](hidden-assumption-audit/) | code review, hidden assumptions, hardcoded values, silent fallbacks, defensive code, over-engineering, AI-written code, ASSUMPTIONS.md |
 
 ## Skill descriptions
 
