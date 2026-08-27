@@ -17,6 +17,8 @@ description: |
   says "会不会有问题 / 是不是写死了 / 逻辑对不对 / 这里为什么这么写"; after
   landing a large AI-written change; or when one suspicious pattern is spotted
   and the user wants to know what else was decided without them.
+metadata:
+  keywords: code review, hidden assumptions, hardcoded values, silent fallbacks, defensive code, over-engineering, AI-written code, ASSUMPTIONS.md
 ---
 
 # Hidden assumption audit

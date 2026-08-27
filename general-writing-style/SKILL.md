@@ -5,9 +5,11 @@ description: |
   them or on their behalf, in English or Chinese: documents, READMEs, articles,
   release notes, announcements, bios, emails, PR descriptions, UI copy, social
   posts, presentation text. Not tied to any one project. Apply it whenever
-  producing prose the user will sign or ship, even when they don't mention style —
+  producing prose the user will sign or ship, even when they don't mention style;
   several rules are hard bans (em-dash narration, the middle dot, pluralized Apple
   product names) that they enforce everywhere.
+metadata:
+  keywords: writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting
 ---
 
 # Soleil's writing style
