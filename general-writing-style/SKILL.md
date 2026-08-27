@@ -7,9 +7,10 @@ description: |
   posts, presentation text. Not tied to any one project. Apply it whenever
   producing prose the user will sign or ship, even when they don't mention style;
   several rules are hard bans (em-dash narration, the middle dot, pluralized Apple
-  product names) that they enforce everywhere.
+  product names, chatbot openers) that they enforce everywhere, and the text must
+  not read as machine-written.
 metadata:
-  keywords: writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting
+  keywords: writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting, AI writing signs
 ---
 
 # Soleil's writing style
@@ -46,6 +47,49 @@ Violating these means the text comes back.
    one panel glides across the bar instead of reopening" is a claim. If no
    specific exists to anchor an adjective, cut the adjective.
 
+6. **No chatbot openers.** Never begin with "Certainly!", "Sure!", "Here's",
+   "I'd be happy to", "Great question", or any assistant throat-clearing. The
+   first sentence is already the content.
+
+7. **No unrendered Markdown in front of a reader.** Bold, headings, and inline code
+   are fine where Markdown actually renders (a .md file, a README, a chat that
+   renders it). They are a defect anywhere it doesn't: a UI string, an email body,
+   a plain-text field, a social post, where the reader sees literal `**stars**`
+   and `## hashes`. When you cannot tell whether the destination renders
+   Markdown, ask the user with the question tool before writing; don't guess.
+
+## Signals of machine writing
+
+Readers now recognize AI text by a short list of habits (Pangram's published
+frequency data: em dashes at 10x the human rate, bullet lists 9x, symmetric
+triads 4x, "not just X but Y" 3x). The user has ruled on each; the bans above
+cover the hard cases, and these are the soft ones. Not forbidden, but a reader
+who spots two of them stops believing a person wrote it.
+
+- **Template phrases.** Not recommended: "delve into", "crucial to note that",
+  "in today's fast-paced world", "navigate the complexities of", "tapestry",
+  "profound connection", "a testament to", "game changer". These are not a
+  blacklist; they are examples of a class. The principle is small words and
+  specific words over grand stock words. If a phrase could open any article on
+  any subject, it is not carrying anything here.
+- **Bullet lists where prose belongs.** Default to paragraphs. Use a list only
+  when the content genuinely is a list of parallel items (steps, options, specs).
+  A list of three sentences that could have been one paragraph is the tell.
+- **The symmetric triad.** "X, Y, and Z" with three matched items is the single
+  most machine-flavored rhythm in English prose. Use the rhythm patterns below
+  instead; if three items are real, break the symmetry (see "Broken-third
+  triad").
+- **"Not just X but Y."** A contrast template. Say the thing itself: "A better
+  display", not "not just a bigger display but a better one".
+- **Decorative Unicode.** Symbols are welcome when they mean something: "上海 →
+  广州" for a route, "≈" for a real approximation. Avoid symbols used as ornament
+  or as bullet substitutes (box-drawing, arrows as flourishes, ★ ✦). The user
+  makes things and likes these characters; the test is whether the symbol carries
+  meaning, not whether it exists.
+- **UI-flavored emoji.** Avoid ✅ ❌ ❗ and keycap numbers (1️⃣) in prose; they read
+  as generated output. Face emoji in messages or posts, where a person would use
+  them, are fine.
+
 ## The moves
 
 The recognizable patterns of the voice. This is a palette, not a checklist: reach
@@ -56,10 +100,6 @@ then unpack it after a colon with a few concrete items:
 
 > I care deeply about craft: the shadows, the easing curves, the half-pixels that
 > make an interface feel considered.
-
-**Triads.** Three-beat lists give rhythm without ornament:
-
-> enrolled, monitored, and ready to serve
 
 **Semicolon-paired claims.** Two related assertions share a sentence; the second
 sharpens the first:
@@ -86,6 +126,78 @@ faster than specification language:
 > There is no point advertising "Allocated" on a Mac that isn't there.
 > Most of the work below is about making those realities boring.
 
+## Rhythm, learned from Apple
+
+Apple's copy from 1984 to 2026 was surveyed for this skill (archived product pages
+for iPod 2001, iPhone 2007, MacBook Air 2008, iPhone 4, iPad 2, iPhone 5, 6, 6s, 7,
+X, XS, MacBook Air 2018 and 2020, MacBook Pro 2021, iPhone 14 Pro, Vision Pro, the
+2026 pages, the 1984 Macintosh brochure, Think Different, and a per-product
+tagline record). The finding: Apple's headline unit is two beats, not three. Where
+a third item appears it is period-separated and the third breaks the pattern; the
+comma-and triad shows up only in spec copy. These are the patterns, each with
+dated evidence. Use them for headlines, subheads, and the first sentence of
+anything.
+
+**The turn pair.** Two fragments; the second reverses or answers the first. Apple's
+workhorse for thirty years:
+
+> So many innovations. So little space. (MacBook Air, 2008)
+> Less in your hands. More at your fingertips. (iPad 2, 2011)
+> Makes a splash. Takes a splash. (iPhone 7, 2016)
+> Devours tasks. Sips battery. (MacBook Air, 2020)
+> Out of range. Not out of reach. (iPhone, 2026)
+
+**The echo pair.** Same structure twice; the repetition is the emphasis:
+
+> Truly helpful. Truly yours. (macOS, 2026)
+> Choose your size. Choose your chip. (MacBook Pro, 2021)
+> Four million pixels. One brilliant debut. (MacBook Air, 2018)
+
+**The self-fold.** A line that turns back on itself:
+
+> Hello. Again. (iMac, 1998)
+> This changes everything. Again. (iPhone 4, 2010)
+> Bigger than bigger. (iPhone 6, 2014)
+> The only thing that's changed is everything. (iPhone 6s, 2015)
+> Your wallet. Without the wallet. (Apple Pay, 2014)
+
+**The broken-third triad.** When there really are three, separate them with
+periods and let the third break the symmetry. This is the only triad shape to use:
+
+> Rip. Mix. Burn. (iTunes, 2001)
+> Faster. Greener. Still mini. (Mac mini)
+> Redesigned. Reengineered. Re-everythinged. (MacBook, 2008)
+> 12MP pictures. 4K videos. Live Photos. Lasting memories. (iPhone 6s, 2015)
+
+**The idiom hijack.** Take a phrase everyone knows and change one word:
+
+> Think different. (1997)
+> The plot thins. (PowerBook, 1999)
+> Thinnovation. (MacBook Air, 2008)
+> For your ears only. (AirPods Pro, 2026)
+> Might takes flight. (MacBook Air, 2026)
+
+**The number headline.** The figure is the headline; it needs no adjective:
+
+> 1,000 songs in your pocket. (iPod, 2001)
+> 960 by 640 by Wow. (iPhone 4, 2010)
+> Over 4 million pixels. Under 3.6 pounds. (MacBook Pro, 2012)
+> Two sizes. Five finishes. (iPhone 7, 2016)
+> Up to 18 hours of battery life. That's 6 more hours, free of charge. (2020)
+
+**Setup and landing.** A longer sentence sets it up; a short one lands it:
+
+> A funny thing happens when you design a computer everyone can use. Everyone
+> uses it. (Macintosh brochure, 1984)
+> It's hard to believe we could fit so many great ideas into something so thin.
+> (iPad, 2010)
+
+**Long-form cadence.** For manifestos, intros, and anything over a paragraph, the
+1984 brochure and Think Different share one method: short sentences in sequence,
+direct address to "you", a question answered in the next line, and a closing
+line that echoes the opening. Fragments are sentences. "Here's to the crazy ones.
+The misfits. The rebels. The troublemakers."
+
 ## Substance rules
 
 What the text says matters as much as how it sounds.
@@ -104,8 +216,9 @@ What the text says matters as much as how it sounds.
 ## Both languages
 
 The rules hold in Chinese as written: 「——」和「·」同样禁用，用冒号、分号、逗号或
-拆句重构；标题层级靠字重与位置，不靠大写；产品名不加复数。The voice translates
-too: short declaratives, concrete nouns, restraint.
+拆句重构；标题层级靠字重与位置，不靠大写；产品名不加复数；不以客服腔开场；
+不在不渲染 Markdown 的地方留下 `**` 和 `##`。The voice translates too: short
+declaratives, concrete nouns, restraint, two beats over three.
 
 ## Pre-ship checklist
 
@@ -114,6 +227,12 @@ Before delivering any prose, scan for these:
 - `—` or `——` outside numeric ranges and code comments (grepable)
 - `·` anywhere (grepable)
 - `Macs`, `iPhones`, `iPads`, or any Apple name + "s" (grepable)
+- `**`, `##`, or backticks in text that will not render Markdown (grepable)
+- an opening that addresses the reader like a chatbot
 - ALL-CAPS labels or headings
+- "X, Y, and Z" triads with three matched items
+- "not just ... but ..." constructions
+- stock phrases that could open any article
+- ✅ ❌ and keycap emoji; ornamental symbols with no meaning
 - adjectives with no concrete anchor nearby
 - claims you did not verify against the real source
