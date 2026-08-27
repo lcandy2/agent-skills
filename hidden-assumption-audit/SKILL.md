@@ -85,7 +85,19 @@ wrapper that swallows an error, the guard that can never fire, or the
 interpretation that quietly narrowed a requirement.
 
 On a large repository, work through it systematically (module by module), not
-by sampling.
+by sampling. Split the reading across parallel readers by module if it helps,
+each returning candidates with a counter-example and an evidence trail; then
+the coordinator independently re-verifies the candidates with the largest
+blast radius (rerun the probe, reread the lines) before they enter the report.
+A reader's claim is a candidate, not a verdict.
+
+Evidence often lives outside the target. When the repository is one piece of a
+system, the strongest contradictions sit in its producers and consumers: the
+validator upstream that already requires the field the target ignores, the
+adapter that never writes the key a generated column reads, the caller that
+never passes the flag. Read those sibling repositories for evidence; report
+only on the target. A finding's `Where` points into the target; its evidence
+may cite the sibling.
 
 ### 4. Verify each candidate
 
@@ -131,6 +143,31 @@ is empty or the user stops. For each, offer:
 - **Not intended**: it stands as a finding.
 - **Intended for now**: record in the ledger with the `Holds while` condition
   under which it must be revisited.
+
+Every question carries its own referent. The owner is reading a question, not
+the code, and on a repository of any size a bare identifier tells them
+nothing: `sessions[0]` does not say which file, what a session is, or what the
+code does with it. Before asking, state what the thing is in this codebase (a
+session is one performance date of a show), where it lives (file, function),
+what the code does with it, one concrete example of each outcome, and what a
+wrong answer costs. Write it as the domain expert would and explain it as the
+owner needs; both, never one instead of the other. A question the owner has
+to decode is the audit's own hidden assumption: that the reader already knows
+what the auditor knows.
+
+The owner will sometimes answer with something other than the three options.
+Each has a fixed handling:
+
+- **A rule** ("only the curator's path may bypass the cooldown"): record the
+  rule as the ledger entry, then check the code against it before moving on.
+  Code that violates the stated rule is a new finding; report it in the
+  addendum.
+- **A design** ("a uuid primary key; the integer only feeds the public id"):
+  the item stands as a finding and the design becomes its `Direction`. Do not
+  start the redesign; it is outside the audit.
+- **Uncertainty** ("not sure, what is best?"): give one recommendation with
+  its reason, and leave the item under `Open questions` marked undecided.
+  Nothing undecided goes into the ledger.
 
 If the session cannot ask (a headless or background run), stop after the
 report; the `Open questions` section already contains everything needed to
@@ -186,8 +223,10 @@ One line each: location, the suspicion, why no counter-example was found.
 Already settled by the ledger, one line each with slug.
 ```
 
-Ledger entries written after the asking round are reported as a short
-addendum, one line each, rather than as a section written in advance.
+Rulings from the asking round go into a short addendum rather than a section
+written in advance: ledger entries by slug, items ruled not intended numbered
+on as findings, findings that a stated rule exposed, and undecided items with
+the recommendation given.
 
 ## What not to report
 
