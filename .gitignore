@@ -27,3 +27,6 @@ __pycache__/
 
 # Claude Code local state
 .claude/settings.local.json
+
+# Skill eval workspaces (skill-creator iterations, local only)
+_*-workspace/

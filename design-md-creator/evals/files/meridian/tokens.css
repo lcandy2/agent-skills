@@ -1,0 +1,60 @@
+/* Meridian design tokens. This file is the source of truth; app and
+   marketing both import it. Dark is the primary theme. */
+
+:root {
+  --mrd-bg: #0b0d10;
+  --mrd-surface: #12151a;
+  --mrd-surface-raised: #1a1e25;
+  --mrd-text: #e6e9ee;
+  --mrd-text-dim: #8b93a1;
+  --mrd-border: #232833;
+  --mrd-border-strong: #333a48;
+
+  /* The only brand color. Everything else stays neutral. */
+  --mrd-accent: #4f8cff;
+
+  /* State colors: data and status only, never decoration. */
+  --mrd-positive: #35c28f;
+  --mrd-negative: #e5534b;
+  --mrd-warning: #d9a03f;
+
+  --mrd-chart-1: #4f8cff;
+  --mrd-chart-2: #35c28f;
+  --mrd-chart-3: #d9a03f;
+  --mrd-chart-4: #a78bfa;
+
+  --mrd-space-1: 4px;
+  --mrd-space-2: 8px;
+  --mrd-space-3: 16px;
+  --mrd-space-4: 24px;
+  --mrd-space-5: 32px;
+  --mrd-space-6: 48px;
+  --mrd-space-7: 64px;
+  --mrd-space-8: 96px;
+
+  --mrd-radius-small: 4px;
+  --mrd-radius: 6px;
+
+  --mrd-font-sans: "Inter", system-ui, sans-serif;
+  --mrd-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --mrd-type-title: 28px;
+  --mrd-type-section: 20px;
+  --mrd-type-body: 15px;
+  --mrd-type-small: 13px;
+  --mrd-type-caption: 12.5px;
+
+  --mrd-weight-regular: 400;
+  --mrd-weight-medium: 500;
+  --mrd-weight-semibold: 600;
+}
+
+[data-theme="light"] {
+  --mrd-bg: #ffffff;
+  --mrd-surface: #f6f7f9;
+  --mrd-surface-raised: #ffffff;
+  --mrd-text: #16181d;
+  --mrd-text-dim: #5c6570;
+  --mrd-border: #e3e6eb;
+  --mrd-border-strong: #c9cfd8;
+}

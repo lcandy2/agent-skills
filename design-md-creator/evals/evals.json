@@ -1,0 +1,49 @@
+{
+  "skill_name": "design-md-creator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "meridian-from-tokens",
+      "prompt": "Our sales and success teams use v0 and Claude artifacts to put together customer-facing usage reports and renewal proposals, and everything comes out looking like a generic SaaS dashboard: gradient heroes, rows of metric cards, none of it looks like us. We're Meridian (data infrastructure for streaming pipelines, meridian.dev). Our design tokens are in tokens.css, our writing rules are in brand-voice.md, and snippet.html shows how every page on our site opens and closes. Create a design.md we can host at meridian.dev/design.md so these external tools generate pages that actually look and read like Meridian.",
+      "expected_output": "A design.md (skill-formatted: frontmatter with name and a triggering description naming usage reports and renewal proposals) that is self-contained for external agents, uses only the real --mrd-* token names from tokens.css without inventing any, encodes the voice rules from brand-voice.md and the header/footer conventions from snippet.html, includes a priority order, a named-rejections list, and a closed-vocabulary rule; plus a scenarios.md with 2-3 frozen scenarios.",
+      "files": [
+        "files/meridian/tokens.css",
+        "files/meridian/brand-voice.md",
+        "files/meridian/snippet.html"
+      ],
+      "assertions": [
+        "design.md is skill-formatted: YAML frontmatter with a name and a description, and the description names the concrete artifact types (usage reports, renewal proposals)",
+        "No invented tokens: every --mrd-* custom property referenced anywhere in the delivered files is actually defined in the supplied tokens.css",
+        "No invented facts stated as real: any URL, hosting claim, asset location, or convention the supplied sources do not contain is marked as proposed/to-confirm, never asserted as existing fact",
+        "Closed vocabulary rule: design.md explicitly forbids inventing, aliasing, or extrapolating token/class names beyond a listed set",
+        "Priority order: design.md contains an explicit ordered conflict-resolution list (what wins when requirements compete)",
+        "Named rejections: design.md has a section of concrete banned patterns that includes the failures the user complained about (gradient heroes, rows of metric cards)",
+        "Voice rules carried over from brand-voice.md: banned marketing words (e.g. blazingly/seamless/powerful), sentence case, no exclamation points, absolute dates all appear as rules",
+        "Self-contained for external agents: design.md contains no local filesystem or repo-relative paths; any referenced asset is a public URL",
+        "scenarios.md pins each scenario with reader, verbatim prompt, inputs, viewport, AND a rubric written before any run, AND fields recording model and design.md version per stored run",
+        "A hidden holdout scenario exists and is marked as never reviewed during editing",
+        "An explicit approval gate is stated: the design owner must approve before the file ships, with rights/confidentiality checked",
+        "design.md body is at most 400 lines"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "halftone-from-description",
+      "prompt": "I run a two-person indie studio called Halftone. We make a screenshot annotation app for Mac. We have no design system and no token file, but the brand is distinctive: warm, hand-made, print-inspired (think risograph posters and ink on paper), playful but never childish. Accent is a warm red, roughly #d4482e. Headings in a Tiempos-like serif, body in a humanist sans. We're starting to use Claude and v0 to build marketing pages and release-notes pages, and they keep coming out looking like every other startup site. I can't sit through a long interview right now, so make reasonable calls from what I've told you, but be clear about which calls are yours. Give us a design.md.",
+      "expected_output": "A design.md drafted from the described brand: frontmatter with triggering description naming marketing pages and release notes; a minimal proposed token vocabulary defined inline (since no tokens exist) with those inventions clearly marked as proposed/awaiting confirmation rather than stated as fact; voice and rejection rules consistent with the described aesthetic; a priority order; frozen scenarios delivered alongside; and a noted next step to extract tokens to CSS.",
+      "files": [],
+      "assertions": [
+        "design.md is skill-formatted: YAML frontmatter with a name and a description, and the description names the concrete artifact types (marketing pages, release notes)",
+        "Provenance is honest: user-stated facts (warm red #d4482e, Tiempos-like serif headings, print-inspired) are distinguished from the model's inventions, which are marked proposed/assumption/to-confirm",
+        "Undecidable facts are left Open rather than silently filled: anything the user never supplied and the model cannot reasonably derive (e.g. the app's name) is marked Open or uses a clearly labeled stand-in, never quietly asserted",
+        "A minimal bounded token vocabulary is defined inline (colors, type, spacing) together with a closure rule forbidding names outside the list",
+        "Priority order: design.md contains an explicit ordered conflict-resolution list",
+        "Named rejections: a section of concrete banned patterns consistent with the brand (bans the generic startup-site look the user complained about)",
+        "scenarios.md pins each scenario with reader, verbatim prompt, inputs, viewport, AND a rubric written before any run, AND fields recording model and design.md version per stored run",
+        "A hidden holdout scenario exists and is marked as never reviewed during editing",
+        "Next steps note the layer-2 extraction (moving proposed tokens into a real CSS file) and an explicit owner-approval gate before the file ships",
+        "design.md body is at most 400 lines"
+      ]
+    }
+  ]
+}

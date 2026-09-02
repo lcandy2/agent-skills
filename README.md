@@ -12,16 +12,21 @@ With the [skills CLI](https://www.skills.sh/docs):
 npx skills add lcandy2/agent-skills
 ```
 
-`--skill general-writing-style` takes one skill instead of all of them, `-g` installs for the user instead of the current project, and `--list` shows what is here without installing anything.
+`--skill design-md-creator` takes one skill instead of all of them, `-g` installs for the user instead of the current project, and `--list` shows what is here without installing anything.
 
 ## Skills
 
 | Skill | Keywords |
 | --- | --- |
+| [design-md-creator](design-md-creator/) | design.md, brand guidelines, on-brand pages, AI slop, design tokens, v0, Claude artifacts, agent design guidance, eval loop, frozen scenarios, Vercel, 品牌规范, 设计规范, AI 味 |
 | [general-writing-style](general-writing-style/) | writing style, English, Chinese, em-dash, middle dot, Apple product names, README, release notes, UI copy, copywriting, AI writing signs |
 | [hidden-assumption-audit](hidden-assumption-audit/) | code review, hidden assumptions, hardcoded values, silent fallbacks, defensive code, over-engineering, AI-written code, ASSUMPTIONS.md |
 
 ## Skill descriptions
+
+### design-md-creator
+
+Create a design.md for a project or organization: a skill-formatted brand guidance file that teaches page-generating AI (v0, Claude artifacts, eve agents, in-repo coding agents) to produce reports, proposals, marketing and product pages that look and read like the brand made them. Modeled on Vercel's published design.md and, more importantly, on the eval loop they used to distill it. The workflow: mine the repo and brand material for tokens and voice, interview only for the gaps, draft against a proven ten-section skeleton (role, brand context, priority order, four-pass working method, named rejections, bounded token vocabulary, private inspection), then validate with frozen baseline-vs-guided runs and triage every correction into prose, stylesheet, or deterministic check. Use whenever the user wants AI-generated pages to be on-brand; asks to create, improve, or review a design.md, a design section of AGENTS.md, brand guidelines for agents, or a "design system prompt"; complains that generated pages look generic, templated, or AI-flavored (AI 味, 不像我们的 品牌, 太像模板了); or asks how to teach v0, Claude, or Cursor their design language.
 
 ### general-writing-style
 
