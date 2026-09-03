@@ -79,8 +79,47 @@ who spots two of them stops believing a person wrote it.
   most machine-flavored rhythm in English prose. Use the rhythm patterns below
   instead; if three items are real, break the symmetry (see "Broken-third
   triad").
-- **"Not just X but Y."** A contrast template. Say the thing itself: "A better
-  display", not "not just a bigger display but a better one".
+- **Phantom rebuttals.** Defending a claim nobody challenged, in any syntactic
+  shape: "not just X but Y", "X, not Y", "copies the process, not the file",
+  "it's not about Z, it's about W". The test is not the sentence pattern; it
+  is whether the reader had the objection you are preemptively refuting. If
+  nobody was thinking "maybe it copies the file", then "not the file" is
+  answering a ghost. Say the thing directly; cut the negation clause. This is
+  one of the hardest AI habits to catch because it sounds like precision, but
+  it reads as insecurity: the writer is justifying themselves before anyone
+  asked. This also includes filler intensifiers that answer a doubt nobody
+  had: "整个过程" (who said it was partial?), "完全一致" (who said it wasn't?),
+  "真正的" (who said it was fake?), "全面覆盖" (who said it was missing
+  something?). These words feel like precision but they are preemptive
+  defense in disguise. Scan every sentence that contains "not", "不是", or an
+  unnecessary intensifier ("整个", "完全", "真正", "全面") preceded by a
+  positive claim and ask: did anyone dispute this?
+- **Register whiplash.** Technical language and casual language in the same
+  sentence, or a warm human-sounding closer bolted onto a paragraph of
+  mechanical description. A passage maintains one register; if you need to
+  shift, start a new sentence or paragraph, don't splice within one.
+- **Metaphor domain hopping and performative verbs.** AI picks the most "vivid"
+  verb per clause without noticing the metaphors collide: 挖 (mining) + 冻结
+  (physics) + 味 (taste) + 织 (weaving) in one paragraph. A human metaphor
+  holds for a few sentences before switching. Also avoid AI's favorite
+  figurative verbs specifically: 挖掘/深挖, 编织/交织, 解锁, 赋能, 打造. In
+  English: "delve", "weave/tapestry", "unlock", "empower", "craft" (as a verb
+  for non-physical things). Note: describing a process is fine when the verbs
+  are literal. "It reads your repo, drafts one, runs comparison tests" works;
+  "It mines your repo, distills a draft, freezes scenarios" does not. The
+  difference is whether each verb is saying what happens or performing
+  vividness. Four direct verbs in a row read as clear; four figurative verbs
+  in a row read as a machine trying to sound interesting.
+- **Jargon as texture.** Technical words must be precise, not atmospheric. If a
+  term could be replaced by a more common word with zero loss of meaning, it
+  was there for texture, not information. "Token" is precise when discussing
+  tokenizers; it is texture when it means "word" or "signal". A made-up
+  compound ("冻结场景", "frozen scenario") that sounds like a methodology but
+  just means "fixed test case" is the same problem.
+- **Forced intimacy.** Warmth is earned by what the text does, not by sprinkling
+  in casual address. Don't open with "你家", "朋友", "fellow creators", or any
+  familiarity the conversation hasn't built yet. The first sentence should be
+  about the subject, not about the reader-writer relationship.
 - **Decorative Unicode.** Symbols are welcome when they mean something: "上海 →
   广州" for a route, "≈" for a real approximation. Avoid symbols used as ornament
   or as bullet substitutes (box-drawing, arrows as flourishes, ★ ✦). The user
@@ -220,19 +259,48 @@ The rules hold in Chinese as written: 「——」和「·」同样禁用，用�
 不在不渲染 Markdown 的地方留下 `**` 和 `##`。The voice translates too: short
 declaratives, concrete nouns, restraint, two beats over three.
 
-## Pre-ship checklist
+## Review protocol (mandatory)
 
-Before delivering any prose, scan for these:
+After writing, do NOT deliver. Read the text back and check every sentence
+against **every rule defined in this skill**. Not a subset. Not a summary. Every
+rule, for every sentence. A sentence can violate a rule without containing the
+exact words or symbols named in that rule's examples; the examples are
+illustrations of a principle, not an exhaustive list. You must understand what
+each rule is trying to prevent and judge whether the sentence does that thing,
+in any form.
 
-- `—` or `——` outside numeric ranges and code comments (grepable)
-- `·` anywhere (grepable)
-- `Macs`, `iPhones`, `iPads`, or any Apple name + "s" (grepable)
-- `**`, `##`, or backticks in text that will not render Markdown (grepable)
-- an opening that addresses the reader like a chatbot
-- ALL-CAPS labels or headings
-- "X, Y, and Z" triads with three matched items
-- "not just ... but ..." constructions
-- stock phrases that could open any article
-- ✅ ❌ and keycap emoji; ornamental symbols with no meaning
-- adjectives with no concrete anchor nearby
-- claims you did not verify against the real source
+**How to do the pass:** For each sentence, walk through these sections of the
+skill in order and ask whether the sentence violates anything in them. If it
+does, rewrite before moving to the next sentence.
+
+1. **Hard bans** (§1–7): em-dash narration, middle dot, Apple plural, all-caps
+   labels, unanchored adjectives, chatbot openers, unrendered Markdown. These
+   are the only rules where character-level scanning works.
+2. **Phantom rebuttals**: Is this sentence defending against an objection nobody
+   raised? Any negation clause ("not X", "不是 X", "rather than", "instead of",
+   "而非") or filler intensifier ("整个", "完全", "真正", "全面") that
+   preemptively answers a doubt the reader does not have.
+3. **Template phrases**: Does this sentence use a stock phrase that could appear
+   in any article on any subject?
+4. **Bullet lists**: Is a list being used where a paragraph would be more
+   natural?
+5. **Symmetric triad**: Three matched parallel items joined by commas and "and"?
+6. **Register whiplash**: Does this sentence switch between technical and casual
+   mid-sentence, or bolt a warm closer onto mechanical prose?
+7. **Metaphor domain hopping and performative verbs**: Does this sentence use a
+   metaphor from a different domain than the surrounding sentences? Does it
+   use a flagged verb (挖掘/编织/解锁/赋能/打造, delve/weave/unlock/empower/
+   craft)? Is a verb here chosen for vividness rather than accuracy?
+8. **Jargon as texture**: Is a technical term here for precision, or for
+   atmosphere? Could it be replaced by a common word with zero meaning loss?
+9. **Forced intimacy**: Does this sentence address the reader with a familiarity
+   the text has not yet earned?
+10. **Decorative Unicode and UI emoji**: Is a symbol here carrying meaning, or
+    is it ornament?
+11. **Adjective anchor** (re-check from §5): Is every adjective in this sentence
+    anchored by a concrete thing nearby?
+12. **Factual verification**: Does this sentence state a fact? Has it been
+    checked against the real source?
+
+After the per-sentence pass, re-read the full text once for flow. Do not
+re-introduce anything the pass removed.
