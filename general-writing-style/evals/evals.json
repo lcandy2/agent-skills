@@ -1,0 +1,97 @@
+{
+  "skill_name": "general-writing-style",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "请帮我写一封推特推文，来mkt this",
+      "expected_output": "Reference (the user's own version): 最近 Vercel 关于设计和团队开发工作流的文章很火，我逐字逐句阅读之后，用他们的工作流程制作了一个 design-md-creator Skill。这个 Skill 复制了整个过程，从你的项目中找到设计模板，并起草一个 design.md 文件，随后再用固定的测试场景 1:1 对比该 design.md 效果，直到完全和 branding 一致。 The output must carry the same shape: context, the author's investment, the artifact built from Vercel's workflow, the mechanism in direct verbs, the stopping standard; first person; no pain hook, no inherited coinage (frozen scenarios), no phantom rebuttal.",
+      "files": [
+        "../design-md-creator/SKILL.md",
+        "../design-md-creator/README.md"
+      ],
+      "expectations": [
+        "No em dash used as narration",
+        "No middle dot 「·」",
+        "Apple product names never pluralized",
+        "No chatbot opener",
+        "No UI-flavored emoji",
+        "No phantom rebuttal (not just X but Y / X, not Y / 不是…而是)",
+        "No flagged figurative verbs",
+        "No stock phrases / hype adjectives",
+        "No comma-and symmetric triad (X, Y, and Z)",
+        "Contains one Chinese and one English tweet",
+        "Each tweet within 280 X characters",
+        "Each tweet includes a way to get it (repo link or install command)",
+        "No made-up methodology jargon (frozen scenarios, distill, mine your repo)",
+        "No forced intimacy (你家 / fellow creators)",
+        "No filler intensifiers (整个/完全/真正/全面) in Chinese",
+        "Written in first person (I / 我)",
+        "Credits the source (Vercel) as provenance",
+        "Names the stopping standard (until it matches the brand / 1:1)",
+        "Does not open with a pain-hook or a question to the reader",
+        "Investment written at a costly level (逐字逐句 / every line), not just 'read it'",
+        "Each tweet is at most four sentences (compression)"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "给 Cosmos 写 README 开头的介绍段落，英文，3 到 5 句。Cosmos 是 Photon 内部平台，管理 250 多台 Mac 设备：设备注册和身份、实时健康状态、30 天 uptime 历史、线路分配。我是设计工程师，端到端做的（API 和 dashboard）。",
+      "expected_output": "3-5 sentence README intro: 'Mac devices' never 'Macs', no em dash, no symmetric comma-and triad, no stock phrases, numbers carry the claim, no bullet list.",
+      "files": [],
+      "expectations": [
+        "No em dash used as narration",
+        "No middle dot 「·」",
+        "Apple product names never pluralized",
+        "No chatbot opener",
+        "No UI-flavored emoji",
+        "No phantom rebuttal (not just X but Y / X, not Y / 不是…而是)",
+        "No flagged figurative verbs",
+        "No stock phrases / hype adjectives",
+        "No comma-and symmetric triad (X, Y, and Z)",
+        "Between 3 and 5 sentences",
+        "States the 250+ device figure",
+        "No bullet list (prose paragraph)",
+        "Uses 'Mac devices' / 'Mac fleet' phrasing"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "写 soleilchao.com 的 release note，英文，给 GitHub Release 用（会渲染 Markdown）。这次改动：加了 LinkedIn 链接；OG 分享图改成运行时生成（satori + resvg-wasm，跑在 Cloudflare Workers 上）；sitemap 和 robots 改为自动生成；www 子域 302 跳转到主域。",
+      "expected_output": "Short release note: prose or a genuine parallel list of changes is acceptable, no em dash, no chatbot opener, no ✅ emoji, no hype adjectives, sentence-case headings if any.",
+      "files": [],
+      "expectations": [
+        "No em dash used as narration",
+        "No middle dot 「·」",
+        "Apple product names never pluralized",
+        "No chatbot opener",
+        "No UI-flavored emoji",
+        "No phantom rebuttal (not just X but Y / X, not Y / 不是…而是)",
+        "No flagged figurative verbs",
+        "No stock phrases / hype adjectives",
+        "No comma-and symmetric triad (X, Y, and Z)",
+        "Mentions LinkedIn, OG image, sitemap, robots, www redirect",
+        "Headings (if any) are sentence case, not ALL CAPS"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "写一段中文个人简介，60 字以内，放在个人主页上（纯文本，不渲染 Markdown）。我是 Soleil Chao，Photon 的 design engineer，做了 Cosmos（管理 250 多台 Mac 的内部平台），在乎界面里的细节。",
+      "expected_output": "Under 60 Chinese characters, plain text with zero Markdown symbols, no 「——」, no 「·」, 'Mac 设备' not 'Macs', no 打造/赋能/深耕 verbs, no filler intensifiers.",
+      "files": [],
+      "expectations": [
+        "No em dash used as narration",
+        "No middle dot 「·」",
+        "Apple product names never pluralized",
+        "No chatbot opener",
+        "No UI-flavored emoji",
+        "No phantom rebuttal (not just X but Y / X, not Y / 不是…而是)",
+        "No flagged figurative verbs",
+        "No stock phrases / hype adjectives",
+        "No comma-and symmetric triad (X, Y, and Z)",
+        "60 characters or fewer",
+        "No Markdown symbols in plain-text bio",
+        "No filler intensifiers (整个/完全/真正/全面)"
+      ]
+    }
+  ]
+}

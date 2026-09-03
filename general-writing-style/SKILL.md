@@ -87,13 +87,15 @@ who spots two of them stops believing a person wrote it.
   answering a ghost. Say the thing directly; cut the negation clause. This is
   one of the hardest AI habits to catch because it sounds like precision, but
   it reads as insecurity: the writer is justifying themselves before anyone
-  asked. This also includes filler intensifiers that answer a doubt nobody
-  had: "整个过程" (who said it was partial?), "完全一致" (who said it wasn't?),
-  "真正的" (who said it was fake?), "全面覆盖" (who said it was missing
-  something?). These words feel like precision but they are preemptive
-  defense in disguise. Scan every sentence that contains "not", "不是", or an
-  unnecessary intensifier ("整个", "完全", "真正", "全面") preceded by a
-  positive claim and ask: did anyone dispute this?
+  asked. Filler intensifiers can be the same move in disguise: "真正的" (who
+  said it was fake?), "全面覆盖" (who said something was missing?). The test
+  for "整个 / 完全 / 1:1 / 直到…为止" is whether a real standard stands behind
+  the word. "复制了整个过程" is a fidelity claim (the whole workflow, not a
+  step of it) and "直到完全和 branding 一致" names the loop's stopping
+  condition; both are precise and stay. An intensifier with no standard
+  behind it is defense; an intensifier that names the bar is evidence. Scan
+  every sentence that contains "not", "不是", or an intensifier preceded by a
+  positive claim and ask: did anyone dispute this, or is this naming a bar?
 - **Register whiplash.** Technical language and casual language in the same
   sentence, or a warm human-sounding closer bolted onto a paragraph of
   mechanical description. A passage maintains one register; if you need to
@@ -120,6 +122,15 @@ who spots two of them stops believing a person wrote it.
   in casual address. Don't open with "你家", "朋友", "fellow creators", or any
   familiarity the conversation hasn't built yet. The first sentence should be
   about the subject, not about the reader-writer relationship.
+- **Inherited phrasing.** When writing from source material (a file, an article,
+  a brief, a skill you wrote yourself), the source's coined terms and clever
+  lines are facts to verify, never sentences to reuse. "Frozen scenarios",
+  "distilled, not written", "copy the process, not the file" read well inside
+  a spec and read as slop in a tweet; the model lifted all three verbatim from
+  a SKILL.md into marketing copy. Restate every borrowed idea in direct words
+  ("fixed test scenarios", "built from 200 runs") and keep the number, drop
+  the coinage. If a phrase in your draft did not originate with you, it is a
+  quote, and quotes need a reason.
 - **Decorative Unicode.** Symbols are welcome when they mean something: "上海 →
   广州" for a route, "≈" for a real approximation. Avoid symbols used as ornament
   or as bullet substitutes (box-drawing, arrows as flourishes, ★ ✦). The user
@@ -128,6 +139,51 @@ who spots two of them stops believing a person wrote it.
 - **UI-flavored emoji.** Avoid ✅ ❌ ❗ and keycap numbers (1️⃣) in prose; they read
   as generated output. Face emoji in messages or posts, where a person would use
   them, are fine.
+
+## Showing your own work
+
+When the task is to introduce or market something the user made (a tweet, a
+launch post, a README opener, a bio line), the default AI shape is an ad: a
+second-person pain hook ("Ever notice how every AI page looks the same?"), the
+product, a call to action. That shape erases the author, and the author is the
+point. The user's own version of such a post is the reference:
+
+> 最近 Vercel 关于设计和团队开发工作流的文章很火，我逐字逐句阅读之后，用他们的
+> 工作流程制作了一个 design-md-creator Skill。
+>
+> 这个 Skill 复制了整个过程，从你的项目中找到设计模板，并起草一个 design.md
+> 文件，随后再用固定的测试场景 1:1 对比该 design.md 效果，直到完全和 branding
+> 一致。
+
+Read what it does, in order: **context** (what is current and why it matters:
+Vercel's article is making the rounds), **investment** (what the author put
+in: read it word by word), **artifact** (what came out of that, built from
+their workflow), **mechanism** (the steps in direct verbs: find templates,
+draft design.md, compare on fixed scenarios 1:1), **standard** (where it stops:
+until it fully matches the brand). First person throughout. No pain hook, no
+question to the reader, no CTA slogan; the install line, if any, comes last and
+plain.
+
+The credibility lives in the rigor markers: 逐字逐句, 1:1, 直到…一致. They are
+not intensifiers to trim; they are the evidence that a professional did this.
+Keep them, and keep the source's provenance ("用他们的工作流程") so the reader
+knows where the method came from. Restate the source's ideas in your own direct
+words (see "Inherited phrasing"); credit the source, don't quote its slogans.
+
+**Investment has to cost something.** "读完了" and "I read their writeup" only
+say it happened; they prove nothing. Write the investment at the level that
+shows a professional's care: 逐字逐句读了, 读了三遍, 对着原文一条条核过, read
+every line, went through it twice with the source open. If the true investment
+was small, say what it actually was; don't inflate it. But when the user did
+the work, the sentence must let the reader feel the cost.
+
+**Compression: one sentence per move.** The reference makes all five moves in
+two sentences. That density is the target. Context, investment, and artifact
+share one sentence; mechanism and standard share the next. The mechanism is
+the main chain only (find → draft → compare → until it matches); branch detail
+(a ten-section skeleton, a three-layer triage, blind scoring, what goes in the
+token table) belongs in the README, never in the post. If the draft runs past
+four sentences per language, it has started explaining instead of showing.
 
 ## The moves
 
@@ -259,6 +315,15 @@ The rules hold in Chinese as written: 「——」和「·」同样禁用，用�
 不在不渲染 Markdown 的地方留下 `**` 和 `##`。The voice translates too: short
 declaratives, concrete nouns, restraint, two beats over three.
 
+**Mixed script is the user's Chinese.** Technical terms and product names that
+circulate in English stay in English inside Chinese sentences: token,
+design.md, branding, baseline, Skill, 1:1. The user's own writing reads
+"用他们的工作流程制作了一个 design-md-creator Skill" and "直到完全和 branding
+一致". A forced translation ("设计令牌" for design token, "基线" for baseline
+in an eval context) reads as machine output; it tells the reader the writer
+has never said the word out loud. Translate only what Chinese speakers in
+the field actually say in Chinese.
+
 ## Review protocol (mandatory)
 
 After writing, do NOT deliver. Read the text back and check every sentence
@@ -278,8 +343,9 @@ does, rewrite before moving to the next sentence.
    are the only rules where character-level scanning works.
 2. **Phantom rebuttals**: Is this sentence defending against an objection nobody
    raised? Any negation clause ("not X", "不是 X", "rather than", "instead of",
-   "而非") or filler intensifier ("整个", "完全", "真正", "全面") that
-   preemptively answers a doubt the reader does not have.
+   "而非") that preemptively answers a doubt the reader does not have. For
+   intensifiers ("整个", "完全", "1:1"): is there a real standard behind the
+   word? If yes it stays; if it only sounds thorough, cut it.
 3. **Template phrases**: Does this sentence use a stock phrase that could appear
    in any article on any subject?
 4. **Bullet lists**: Is a list being used where a paragraph would be more
@@ -297,6 +363,15 @@ does, rewrite before moving to the next sentence.
    the text has not yet earned?
 10. **Decorative Unicode and UI emoji**: Is a symbol here carrying meaning, or
     is it ornament?
+10a. **Showing your own work**: If the text introduces something the user made,
+    does it follow context → investment → artifact → mechanism → standard in
+    first person, or did it fall into pain hook → product → CTA? Is the
+    investment written at a level that costs something (逐字逐句, 读了三遍),
+    or does it merely say "read it"? Is the mechanism the main chain only,
+    with branch detail cut? Is it at most four sentences per language?
+10b. **Inherited phrasing**: Did any word or line in this sentence come straight
+    from the source material rather than from you? If so, restate it in direct
+    words; keep the fact, drop the coinage.
 11. **Adjective anchor** (re-check from §5): Is every adjective in this sentence
     anchored by a concrete thing nearby?
 12. **Factual verification**: Does this sentence state a fact? Has it been
